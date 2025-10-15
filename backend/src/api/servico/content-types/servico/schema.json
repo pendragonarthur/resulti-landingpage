@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "servicos",
+  "info": {
+    "singularName": "servico",
+    "pluralName": "servicos",
+    "displayName": "Servico"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nome": {
+      "type": "string"
+    },
+    "Descricao": {
+      "type": "blocks"
+    },
+    "Resumo": {
+      "type": "string"
+    },
+    "Imagem": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Nome"
+    }
+  }
+}

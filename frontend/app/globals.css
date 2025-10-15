@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.mySwiper {
+  padding: 72px 64px !important;
+}
+
+/* Estiliza e posiciona as setas de navegação */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1e5a9a !important;
+  width: 32px !important; /* Largura maior */
+  height: 32px !important; /* Altura maior */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Garante que fiquem acima dos slides */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px !important; /* Tamanho do ícone (seta) */
+  font-weight: bold; /* Deixa o ícone mais visível */
+}
+
+/* Ajusta a posição das setas para ficarem na borda do padding do .mySwiper */
+.swiper-button-prev {
+  left: 16px !important;
+}
+.swiper-button-next {
+  right: 16px !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #a0a0a0 !important; /* Cor padrão da bolinha */
+  opacity: 0.7 !important;
+  transition: all 0.3s ease;
+  width: 10px !important; /* Aumenta o tamanho da bolinha */
+  height: 10px !important;
+  margin: 0 6px !important; /* Aumenta o espaçamento entre as bolinhas */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #1e5a9a !important; /* Cor da bolinha ativa (seu azul) */
+  opacity: 1 !important;
+  transform: scale(1.2);
+}
+
+/* Ajusta a posição da paginação para não ficar colada */
+.swiper-pagination {
+  bottom: 0px !important; /* Ajusta a distância do fundo do Swiper */
+  padding-bottom: 0.25rem !important; /* Espaço para as bolinhas não colarem no card */
+}
+
+/* Opcional: Se você quiser setas mais discretas em mobile */
+@media (max-width: 767px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important; /* Esconde as setas em telas pequenas */
+  }
+  .mySwiper {
+    padding: 0 !important; /* Remove padding em mobile para slides ocuparem toda a largura */
+  }
+}

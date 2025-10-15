@@ -1,0 +1,29 @@
+# Arquivo de log do Node.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependências (ESSENCIAL)
+node_modules/
+
+# Arquivos de ambiente - NUNCA ENVIE SENHAS OU CHAVES DE API!
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arquivos de build e cache do Next.js (Frontend)
+.next/
+out/
+
+# Arquivos de build e cache do Strapi (Backend)
+.strapi/
+build/
+*.db
+!/backend/database/data.db
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+.vscode
