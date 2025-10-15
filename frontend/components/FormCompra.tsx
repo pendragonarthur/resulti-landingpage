@@ -2,11 +2,7 @@
 
 import { useState, useEffect, FocusEvent, ChangeEvent } from "react";
 import { Produto } from "@/helpers/produtos";
-import {
-  formatarPreco,
-  mostrarPrecoExibicao,
-  calcularPrecoPromocional,
-} from "@/helpers/precos";
+import { formatarPreco } from "@/helpers/precos";
 
 interface UserData {
   nome: string;
@@ -22,10 +18,9 @@ interface UserData {
 }
 
 export default function FormCompra({
-  searchParams,
   initialProduct,
 }: {
-  searchParams: { id?: string };
+  searchParams: { id: number };
   initialProduct?: Produto;
 }) {
   const [userData, setUserData] = useState<UserData>({
@@ -114,8 +109,6 @@ export default function FormCompra({
       </section>
     );
   }
-
-  const precoExibicao = mostrarPrecoExibicao(item.Preco);
 
   return (
     <section

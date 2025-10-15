@@ -13,7 +13,7 @@ export default async function CatalogoComponent() {
         >
           Compressores de Ponta Exclusivos
         </h2>
-        <CatalogoCarrossel produtos={produtos} />
+        <CatalogoCarrossel produtos={[produtos]} />
       </div>
     </section>
   );

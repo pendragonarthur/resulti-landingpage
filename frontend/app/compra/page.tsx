@@ -4,7 +4,7 @@ import { getProdutos, Produto } from "@/helpers/produtos";
 export default async function FormularioCompraPage({
   searchParams,
 }: {
-  searchParams: Promise<{ id: string }>;
+  searchParams: Promise<{ id: number }>;
 }) {
   const { id } = await searchParams;
   if (!id) {
@@ -18,17 +18,17 @@ export default async function FormularioCompraPage({
   }
 
   const produtos: Produto[] = await getProdutos();
-  const item = produtos.find((p) => p.id.toString() === id);
+  const item = produtos.find((p) => p.id === id);
 
   if (!item) {
     return (
       <section className="h-screen flex items-center justify-center">
         <p className="text-2xl font-bold text-red-600">
-          Produto com ID "{id}" não encontrado.
+          Produto com ID &quot;{id}&quot; não encontrado.
         </p>
       </section>
     );
   }
 
-  return <FormCompra initialProduct={item} />;
+  return <FormCompra initialProduct={item} searchParams={{ id }} />;
 }

@@ -1,7 +1,3 @@
-interface IconProps {
-  className?: string;
-}
-
 export default function IconeColaboradores() {
   return (
     <svg

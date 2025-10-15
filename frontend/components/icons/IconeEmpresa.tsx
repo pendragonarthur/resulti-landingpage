@@ -1,8 +1,4 @@
-interface IconProps {
-  className?: string;
-}
-
-export default function IconeEmpresa({ className }: IconProps) {
+export default function IconeEmpresa() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

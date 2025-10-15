@@ -1,15 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { Artigo, getArtigoPorSlug } from "@/helpers/conteudo";
 import Link from "next/link";
 import Image from "next/image";
-
-const formatarData = (dataStr: string) => {
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  return new Date(dataStr).toLocaleDateString("pt-BR", options);
-};
 
 export default async function ArtigoPostPage({
   params,

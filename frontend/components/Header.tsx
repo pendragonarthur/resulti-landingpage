@@ -6,7 +6,7 @@ export default async function Header() {
   const whatsappNumber = "5547999999999";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
-  const servicos = await getServicos();
+  const servicos: Servico[] = await getServicos();
 
   return (
     <header className="bg-[#F0F4F8] shadow-md sticky top-0 z-50 font-semibold">

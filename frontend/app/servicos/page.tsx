@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { Servico, getServicos } from "@/helpers/servicos";
 
 export default async function ServicosPage() {

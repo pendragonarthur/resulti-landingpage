@@ -5,28 +5,7 @@ import IconeSuporte from "./icons/IconeSuporte";
 import IconeCompressor from "./icons/IconeCompressor";
 import IconeEntrega from "./icons/IconeEntrega";
 import IconeServicos from "./icons/IconeServicos";
-
-interface Servico {
-  id: number;
-  Nome: string;
-  Resumo: string;
-  Descricao: any[];
-  Slug: string;
-  Imagem: {
-    url: string;
-    alternativeText: string;
-  };
-}
-
-async function getServicos() {
-  const url = "http://localhost:1337/api/servicos";
-  const res = await fetch(url, { cache: "no-store" });
-  if (!res.ok) {
-    throw new Error("Falha ao buscar serviços");
-  }
-  const dados = await res.json();
-  return dados.data;
-}
+import { Servico, getServicos } from "@/helpers/servicos";
 
 const iconMap: { [key: number]: React.ComponentType<{ className?: string }> } =
   {

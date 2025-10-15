@@ -3,11 +3,7 @@ import Image from "next/image";
 
 import { getProdutos } from "@/helpers/produtos";
 import { Produto } from "@/helpers/produtos";
-import {
-  formatarPreco,
-  calcularPrecoPromocional,
-  mostrarPrecoExibicao,
-} from "@/helpers/precos";
+import { formatarPreco, mostrarPrecoExibicao } from "@/helpers/precos";
 
 export default async function CatalogoPage() {
   const produtos: Produto[] = await getProdutos();
