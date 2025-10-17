@@ -1,3 +1,5 @@
+import { API_URL } from "./api";
+
 export interface Artigo {
   id: number;
   Titulo: string;
@@ -16,7 +18,7 @@ export async function getArtigos() {
     "sort[0]": "publishedAt:desc",
   }).toString();
 
-  const url = `http://localhost:1337/api/artigos?${query}`;
+  const url = `${API_URL}/api/artigos?${query}`;
 
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) {
@@ -32,7 +34,7 @@ export async function getArtigoPorSlug(slug: string) {
     populate: "*",
   }).toString();
 
-  const url = `http://localhost:1337/api/artigos?${query}`;
+  const url = `${API_URL}/api/artigos?${query}`;
 
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error("Falha ao buscar o artigo");

@@ -1,3 +1,5 @@
+import { API_URL } from "./api";
+
 export interface Servico {
   id: number;
   Nome: string;
@@ -16,7 +18,7 @@ export async function getServicoPorSlug(slug: string): Promise<Servico> {
     populate: "*",
   }).toString();
 
-  const url = `http://localhost:1337/api/servicos?${query}`;
+  const url = `${API_URL}/api/servicos?${query}`;
 
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) {

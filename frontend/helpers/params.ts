@@ -1,5 +1,7 @@
+import { API_URL } from "./api";
+
 export async function generateStaticParams() {
-  const url = `http://localhost:1337/api/servicos?fields[0]=Slug`;
+  const url = `${API_URL}/api/servicos?fields[0]=Slug`;
   const res = await fetch(url, { next: { revalidate: 3600 } });
 
   if (!res.ok) {

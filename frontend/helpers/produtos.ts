@@ -1,3 +1,5 @@
+import { API_URL } from "./api";
+
 export interface Produto {
   id: number;
   Nome: string;
@@ -17,7 +19,7 @@ export async function getProdutos() {
   const query = new URLSearchParams({
     populate: "Imagem",
   }).toString();
-  const url = `http://localhost:1337/api/produtos?${query}`;
+  const url = `${API_URL}/api/produtos?${query}`;
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) {
     throw new Error("Falha ao encontrar produtos.");
@@ -34,7 +36,7 @@ export async function getProdutoPorSlug(slug: string): Promise<Produto> {
     populate: "*",
   }).toString();
 
-  const url = `http://localhost:1337/api/produtos?${query}`;
+  const url = `${API_URL}/api/produtos?${query}`;
 
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) {
