@@ -3,6 +3,7 @@
 import { Artigo, getArtigoPorSlug } from "@/helpers/conteudo";
 import Link from "next/link";
 import Image from "next/image";
+import { API_URL } from "@/helpers/api";
 
 export default async function ArtigoPostPage({
   params,
@@ -35,7 +36,7 @@ export default async function ArtigoPostPage({
       {artigo.Imagem && (
         <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] overflow-hidden">
           <Image
-            src={`http://localhost:1337${artigo.Imagem.url}`}
+            src={`${API_URL}${artigo.Imagem.url}`}
             alt={artigo.Imagem.alternativeText || artigo.Titulo}
             fill
             className="object-cover"

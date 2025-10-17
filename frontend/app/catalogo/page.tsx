@@ -4,6 +4,7 @@ import Image from "next/image";
 import { getProdutos } from "@/helpers/produtos";
 import { Produto } from "@/helpers/produtos";
 import { formatarPreco, mostrarPrecoExibicao } from "@/helpers/precos";
+import { API_URL } from "@/helpers/api";
 
 export default async function CatalogoPage() {
   const produtos: Produto[] = await getProdutos();
@@ -24,7 +25,7 @@ export default async function CatalogoPage() {
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {produtos.map((produto) => {
-            const imageUrl = `http://localhost:1337${produto.Imagem.url}`;
+            const imageUrl = `${API_URL}${produto.Imagem.url}`;
             const imageText = produto.Imagem.alternativeText;
 
             return (

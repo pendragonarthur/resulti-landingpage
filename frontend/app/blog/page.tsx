@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { API_URL } from "@/helpers/api";
 
 import { Artigo, getArtigos } from "@/helpers/conteudo";
 
@@ -27,7 +28,7 @@ export default async function BlogPage() {
               }
             );
 
-            const imageUrl = `http://localhost:1337${artigo.Imagem.url}`;
+            const imageUrl = `${API_URL}${artigo.Imagem.url}`;
 
             const imageAlt = `Imagem para o artigo ${artigo.Titulo}`;
 

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { getServicoPorSlug, Servico } from "@/helpers/servicos";
+import { API_URL } from "@/helpers/api";
 
 export default async function ServicoDetalhesPage({
   params,
@@ -36,7 +37,7 @@ export default async function ServicoDetalhesPage({
       {servico.Imagem && (
         <div className="relative w-full  md:h-[300px] lg:h-[600px] mb-12 rounded-lg">
           <Image
-            src={`http://localhost:1337${servico.Imagem.url}`}
+            src={`${API_URL}${servico.Imagem.url}`}
             alt={servico.Imagem.alternativeText || servico.Nome}
             fill
             className="object-cover"

@@ -32,8 +32,7 @@ export async function getServicoPorSlug(slug: string): Promise<Servico> {
 }
 
 export async function getServicos(): Promise<Servico[]> {
-  const url =
-    "http://localhost:1337/api/servicos?fields[0]=Nome&fields[1]=Slug";
+  const url = `${API_URL}/api/servicos?fields[0]=Nome&fields[1]=Slug`;
   const res = await fetch(url, { cache: "no-store" });
 
   if (!res.ok) {

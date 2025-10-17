@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { Produto } from "@/helpers/produtos";
+import { API_URL } from "@/helpers/api";
 
 export default function CatalogoCarrossel({
   produtos,
@@ -54,7 +55,7 @@ export default function CatalogoCarrossel({
         className="mySwiper"
       >
         {produtos.map((produto) => {
-          const imageUrl = `http://localhost:1337${produto.Imagem.url}`;
+          const imageUrl = `${API_URL}${produto.Imagem.url}`;
           const imageAlt = produto.Imagem.alternativeText;
 
           return (

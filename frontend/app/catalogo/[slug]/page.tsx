@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { getProdutoPorSlug, Produto } from "@/helpers/produtos";
+import { API_URL } from "@/helpers/api";
 
 export default async function ProdutoSlugPage({
   params,
@@ -29,7 +30,7 @@ export default async function ProdutoSlugPage({
         <section className="bg-white rounded-xl shadow-xl p-8 lg:p-12 mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="relative w-full aspect-video md:aspect-square overflow-hidden rounded-lg">
             <Image
-              src={`http://localhost:1337${produto.Imagem.url}`}
+              src={`${API_URL}${produto.Imagem.url}`}
               alt={produto.Imagem.alternativeText || produto.Nome}
               fill
               className="object-contain"
